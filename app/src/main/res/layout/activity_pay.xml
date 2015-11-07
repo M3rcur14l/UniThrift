@@ -8,9 +8,17 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:id="@+id/pay_rootLayout"
-    android:background="#ffffff"
+    android:background="#E1EAEF"
     tools:context="com.nullpointer.unithrift.PayActivity">
 
+    <TextView
+        android:id="@+id/payment_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:text="Payment"
+        android:textColor="#31526C"
+        android:textSize="30sp" />
 
 
 </RelativeLayout>

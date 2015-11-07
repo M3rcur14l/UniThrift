@@ -60,10 +60,26 @@ public class HomeActivity extends Activity {
                 (int) (height * 0.43f), 0, 0);
         rootLayout.addView(searchButton, params);
 
+        RelativeButton requestPaymentButton = new RelativeButton(this, "home_request.png");
+        params = new RelativeLayout.LayoutParams(
+                (int) (width / 7.5f),
+                (int) (width / 7.5f * requestPaymentButton.getHeightImage() / requestPaymentButton.getWidthImage()));
+        params.setMargins(
+                (int) (width * 0.45f),
+                (int) (height * 0.70f), 0, 0);
+        rootLayout.addView(requestPaymentButton, params);
+
         movementsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomeActivity.this, MovementsActivity.class));
+            }
+        });
+
+        requestPaymentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, PaymentRequestActivity.class));
             }
         });
 
