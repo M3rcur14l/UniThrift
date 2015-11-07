@@ -1,10 +1,9 @@
 package com.nullpointer.unithrift;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
-import android.os.Debug;
-import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -15,6 +14,9 @@ public class HomeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
@@ -37,7 +39,7 @@ public class HomeActivity extends Activity {
                 (int) (width / 7.5f * feedbackButton.getHeightImage() / feedbackButton.getWidthImage()));
         params.setMargins(
                 (int) (width * 0.25f),
-                (int) (height * 0.40f), 0, 0);
+                (int) (height * 0.43f), 0, 0);
         rootLayout.addView(feedbackButton, params);
 
         RelativeButton movementsButton = new RelativeButton(this, "home_movements.png");
@@ -45,8 +47,25 @@ public class HomeActivity extends Activity {
                 (int) (width / 7.5f),
                 (int) (width / 7.5f * movementsButton.getHeightImage() / movementsButton.getWidthImage()));
         params.setMargins(
-                (int) (width * 0.42f),
-                (int) (height * 0.42f), 0, 0);
+                (int) (width * 0.45f),
+                (int) (height * 0.45f), 0, 0);
         rootLayout.addView(movementsButton, params);
+
+        RelativeButton searchButton = new RelativeButton(this, "home_search.png");
+        params = new RelativeLayout.LayoutParams(
+                (int) (width / 7.0f),
+                (int) (width / 7.0f * searchButton.getHeightImage() / searchButton.getWidthImage()));
+        params.setMargins(
+                (int) (width * 0.80f),
+                (int) (height * 0.43f), 0, 0);
+        rootLayout.addView(searchButton, params);
+
+        movementsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, MovementsActivity.class));
+            }
+        });
+
     }
 }
