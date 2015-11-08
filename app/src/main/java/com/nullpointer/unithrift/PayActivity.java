@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+
+
 public class PayActivity extends Activity {
 
     private String token;
@@ -33,8 +35,17 @@ public class PayActivity extends Activity {
             Uri uri = intent.getData();
             token = uri.getQueryParameter("token");
         }
-        TextView titleTextView = (TextView) findViewById(R.id.payment_title);
+        TextView titleTextView = (TextView) findViewById(R.id.pay_title);
         Typeface tf = Typeface.createFromAsset(getAssets(), "Asap-Medium.otf");
         titleTextView.setTypeface(tf);
+
+        RelativeButton payButton = new RelativeButton(this, "pay_button.png");
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+                (int) (width / 3.4f),
+                (int) (width / 3.4f * payButton.getHeightImage() / payButton.getWidthImage()));
+        params.setMargins(
+                (int) (width * 0.32f),
+                (int) (height * 0.46f), 0, 0);
+        rootLayout.addView(payButton, params);
     }
 }

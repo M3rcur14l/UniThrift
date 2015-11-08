@@ -1,24 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pay_rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/pay_background"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:id="@+id/pay_rootLayout"
-    android:background="#E1EAEF"
     tools:context="com.nullpointer.unithrift.PayActivity">
 
     <TextView
-        android:id="@+id/payment_title"
+        android:id="@+id/pay_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
         android:text="Payment"
         android:textColor="#31526C"
-        android:textSize="30sp" />
+        android:textSize="44sp" />
 
+    <LinearLayout
+        android:id="@+id/pay_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pay_title"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_marginBottom="22dp">
+
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.44"
+            android:text="Description:"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Iphone 6 64gb"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/pay_recipient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pay_description"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_marginBottom="22dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recipient:"
+            android:textSize="16sp"
+            android:layout_weight="0.30" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:text="Marco Rossi"
+            android:textSize="20sp"
+            android:layout_weight="0.37" />
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="22dp"
+            android:background="@drawable/pay_info"/>
+    </LinearLayout>
+
+    <View
+        android:layout_below="@id/pay_recipient"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#263238"/>
+
+    <LinearLayout
+        android:id="@+id/pay_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pay_recipient"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="22dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amount:"
+            android:textSize="16sp"
+            android:layout_weight="0.30" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:text="430€"
+            android:textSize="25sp"
+            android:textColor="#4CAF50"
+            android:layout_weight="0.37" />
+    </LinearLayout>
 
 </RelativeLayout>

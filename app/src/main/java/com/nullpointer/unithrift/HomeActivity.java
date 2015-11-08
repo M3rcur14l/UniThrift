@@ -62,11 +62,11 @@ public class HomeActivity extends Activity {
 
         RelativeButton requestPaymentButton = new RelativeButton(this, "home_request.png");
         params = new RelativeLayout.LayoutParams(
-                (int) (width / 7.5f),
-                (int) (width / 7.5f * requestPaymentButton.getHeightImage() / requestPaymentButton.getWidthImage()));
+                (int) (width / 8.5f),
+                (int) (width / 8.5f * requestPaymentButton.getHeightImage() / requestPaymentButton.getWidthImage()));
         params.setMargins(
-                (int) (width * 0.45f),
-                (int) (height * 0.70f), 0, 0);
+                (int) (width * 0.52f),
+                (int) (height * 0.55f), 0, 0);
         rootLayout.addView(requestPaymentButton, params);
 
         movementsButton.setOnClickListener(new View.OnClickListener() {
