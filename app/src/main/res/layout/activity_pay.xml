@@ -39,7 +39,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Iphone 6 64gb"
+            android:text="Nexus 7 2013 32gb wi-fi"
             android:textSize="20sp" />
     </LinearLayout>
 
@@ -100,7 +100,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
-            android:text="430€"
+            android:text="150€"
             android:textSize="25sp"
             android:textColor="#4CAF50"
             android:layout_weight="0.37" />

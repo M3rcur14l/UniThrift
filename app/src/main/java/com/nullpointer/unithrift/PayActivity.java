@@ -1,17 +1,30 @@
 package com.nullpointer.unithrift;
 
 import android.app.Activity;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Intent;
 import android.graphics.Point;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class PayActivity extends Activity {
 
@@ -47,5 +60,7 @@ public class PayActivity extends Activity {
                 (int) (width * 0.32f),
                 (int) (height * 0.46f), 0, 0);
         rootLayout.addView(payButton, params);
+
+
     }
 }
